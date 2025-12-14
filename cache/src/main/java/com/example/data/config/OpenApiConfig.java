@@ -14,9 +14,9 @@ public class OpenApiConfig {
         return new OpenAPI()
                 .components(new Components())
                 .info(new Info()
-                        .title("redis data sample service")
+                        .title("redis cache sample service")
                         .version("1.0")
-                        .description("sample redis service")
+                        .description("sample redis cache service")
                 );
     }
 }

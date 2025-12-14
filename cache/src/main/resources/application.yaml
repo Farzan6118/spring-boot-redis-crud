@@ -1,5 +1,5 @@
 server:
-  port: 8190
+  port: 8191
 
 spring:
   application:
@@ -13,6 +13,21 @@ spring:
 
   cache:
     type: redis
+
+  datasource:
+    driver-class-name: org.postgresql.Driver
+    url: jdbc:postgresql://localhost:5432/redis-cache-test
+    username: user
+    password: pass
+    hikari:
+      connectionTimeout: 20000
+      maximumPoolSize: 5
+
+  jpa:
+    hibernate:
+      ddl-auto: update
+    show-sql: true
+    open-in-view: true
 
 system:
   default:

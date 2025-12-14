@@ -1,4 +1,4 @@
-package com.example.data.repository.impl;
+package com.example.data.repository;
 
 import com.example.data.domain.Person;
 import com.example.data.repository.PersonRepository;

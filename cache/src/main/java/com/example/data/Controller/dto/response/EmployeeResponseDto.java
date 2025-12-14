@@ -5,17 +5,21 @@ import com.example.data.domain.constant.GenderType;
 import java.time.LocalDate;
 import java.time.LocalDateTime;
 
-public record PersonResponseDto(
+public record EmployeeResponseDto(
         String id,
         String firstname,
         String lastname,
+        String phoneNumber,
         String nationalCode,
         LocalDate birthDate,
-        String phoneNumber,
         GenderType gender,
-        String address,
+        String role,
         String email,
-        LocalDateTime createdDate,
+        String address,
+        String position,
+        String department,
+        LocalDateTime hiringDate,
         LocalDateTime lastModifiedDate
-) {
+
+        ) {
 }

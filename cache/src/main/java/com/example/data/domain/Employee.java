@@ -6,6 +6,7 @@ import lombok.Getter;
 import lombok.Setter;
 
 import java.time.LocalDate;
+import java.time.LocalDateTime;
 
 import lombok.*;
 @Getter
@@ -14,7 +15,7 @@ import lombok.*;
 @AllArgsConstructor
 @NoArgsConstructor
 @Entity
-public class Person extends BaseEntity<Long> {
+public class Employee extends BaseEntity<Long> {
     private String firstname;
     private String lastname;
     private String nationalCode;
@@ -23,5 +24,9 @@ public class Person extends BaseEntity<Long> {
     private GenderType gender;
     private String address;
     private String email;
+    private String role;
+    private String position;
+    private String department;
+    private LocalDateTime hiringDate;
 
 }
