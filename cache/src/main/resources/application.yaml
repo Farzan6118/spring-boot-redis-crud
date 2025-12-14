@@ -13,3 +13,7 @@ spring:
 
   cache:
     type: redis
+
+system:
+  default:
+    staffId: 07fea036-9b95-4519-8e51-da3339bea6aa

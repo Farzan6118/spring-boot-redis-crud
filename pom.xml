@@ -22,7 +22,8 @@
     <packaging>pom</packaging>
 
     <modules>
-        <module>data-redis</module>
+        <module>data</module>
+        <module>cache</module>
     </modules>
 
 </project>
