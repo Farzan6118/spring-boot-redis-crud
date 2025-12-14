@@ -1,0 +1,15 @@
+server:
+  port: 8190
+
+spring:
+  application:
+    name: data-redis
+
+  data:
+    redis:
+      host: localhost
+      port: 6379
+      database: 0
+
+  cache:
+    type: redis
