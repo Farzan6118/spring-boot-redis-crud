@@ -24,7 +24,7 @@ public class EmployeeServiceImpl implements EmployeeService {
     private final EmployeeMapper employeeMapper;
 
     @Override
-    @CacheEvict(value = {"EmployeeList", "EmployeeById"}, allEntries = true)
+    @CacheEvict(value = {"EmployeeResponseDto"}, allEntries = true)
     public EmployeeResponseDto create(EmployeeRequestDto requestDto) {
         Employee employeeEntity = employeeMapper.toEntity(requestDto);
         Employee savedEmployee = repository.save(employeeEntity);
@@ -32,7 +32,7 @@ public class EmployeeServiceImpl implements EmployeeService {
     }
 
     @Override
-    @CacheEvict(value = {"EmployeeList", "EmployeeById"}, allEntries = true)
+    @CacheEvict(value = {"EmployeeResponseDto"}, allEntries = true)
     public EmployeeResponseDto update(EmployeeRequestDto requestDto, Long id) {
         Employee existingEmployee = repository.findById(id)
                 .orElseThrow(() -> new ResponseStatusException(HttpStatus.NOT_FOUND, "Employee does not exist"));
@@ -61,7 +61,7 @@ public class EmployeeServiceImpl implements EmployeeService {
     }
 
     @Cacheable(
-            value = "EmployeeById",
+            value = "EmployeeResponseDto",
             key = "#id",
             unless = "#result == null"
     )
@@ -72,10 +72,6 @@ public class EmployeeServiceImpl implements EmployeeService {
         return employeeMapper.toDto(employeeEntity);
     }
 
-    @Cacheable(
-            value = "EmployeeList",
-            unless = "#result == null"
-    )
     @Override
     public List<EmployeeResponseDto> getAll() {
         return repository.findAll()
@@ -85,7 +81,7 @@ public class EmployeeServiceImpl implements EmployeeService {
     }
 
     @Override
-    @CacheEvict(value = {"EmployeeList", "EmployeeById"}, allEntries = true)
+    @CacheEvict(value = {"EmployeeResponseDto"}, allEntries = true)
     public void delete(Long id) {
         repository.deleteById(id);
     }
