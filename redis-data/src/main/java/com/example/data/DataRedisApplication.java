@@ -6,10 +6,10 @@ import org.springframework.data.redis.repository.configuration.EnableRedisReposi
 
 @SpringBootApplication
 @EnableRedisRepositories
-public class DataApplication {
+public class DataRedisApplication {
 
     public static void main(String[] args) {
-        SpringApplication.run(DataApplication.class, args);
+        SpringApplication.run(DataRedisApplication.class, args);
     }
 
 }

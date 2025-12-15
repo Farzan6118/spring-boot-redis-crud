@@ -15,14 +15,14 @@
         </developer>
     </developers>
     <groupId>com.example</groupId>
-    <artifactId>spring-boot-redis</artifactId>
+    <artifactId>spring-boot-cache</artifactId>
     <version>0.0.1-SNAPSHOT</version>
     <name>spring-boot-redis</name>
     <description>Demo project for Spring Boot and cache with redis</description>
     <packaging>pom</packaging>
 
     <modules>
-        <module>data</module>
+        <module>redis-data</module>
         <module>cache</module>
     </modules>
 

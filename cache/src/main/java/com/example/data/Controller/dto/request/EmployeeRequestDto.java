@@ -51,7 +51,7 @@ public class EmployeeRequestDto {
     private String position;
 
     @Schema(example = "IT")
-    private String department;
+    private Integer departmentId;
 
     @Schema(example = "2023-05-01T09:00:00")
     private LocalDateTime hiringDate;

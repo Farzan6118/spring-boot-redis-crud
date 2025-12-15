@@ -9,7 +9,7 @@
         <relativePath/>
     </parent>
     <groupId>com.example</groupId>
-    <artifactId>data</artifactId>
+    <artifactId>redis-data</artifactId>
     <version>0.0.1-SNAPSHOT</version>
     <name>data</name>
     <description>data</description>

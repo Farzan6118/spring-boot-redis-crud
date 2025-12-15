@@ -47,7 +47,7 @@ public class EmployeeServiceImpl implements EmployeeService {
         existingEmployee.setEmail(requestDto.getEmail());
         existingEmployee.setRole(requestDto.getRole());
         existingEmployee.setPosition(requestDto.getPosition());
-        existingEmployee.setDepartment(requestDto.getDepartment());
+        existingEmployee.setDepartmentId(requestDto.getDepartmentId());
         existingEmployee.setHiringDate(requestDto.getHiringDate());
 
         Employee updatedEmployee = repository.save(existingEmployee);
@@ -89,5 +89,15 @@ public class EmployeeServiceImpl implements EmployeeService {
     @Override
     public long count() {
         return repository.count();
+    }
+
+    @Cacheable(
+            value = "getEmployeeByDepartmentId",
+            key = "#departmentId",
+            unless = "#result == null"
+    )
+    @Override
+    public List<EmployeeResponseDto> getEmployeesByDepartmentId(Integer departmentId) {
+        return repository.findByDepartmentId(departmentId).stream().map(employeeMapper::toDto).toList();
     }
 }

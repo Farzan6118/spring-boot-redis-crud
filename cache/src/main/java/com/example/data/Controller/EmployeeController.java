@@ -31,6 +31,12 @@ public class EmployeeController {
         return ResponseEntity.ok(employeeService.getById(id));
     }
 
+    @GetMapping("{departmentId}")
+    public ResponseEntity<List<EmployeeResponseDto>> getEmployeeByDepartmentId(
+            @PathVariable Integer departmentId) {
+        return ResponseEntity.ok(employeeService.getEmployeesByDepartmentId(departmentId));
+    }
+
     @GetMapping("count")
     public ResponseEntity<Long> countPeople() {
         return ResponseEntity.ok(employeeService.count());

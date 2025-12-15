@@ -26,7 +26,7 @@ public class Employee extends BaseEntity<Long> {
     private String email;
     private String role;
     private String position;
-    private String department;
+    private Integer departmentId;
     private LocalDateTime hiringDate;
 
 }

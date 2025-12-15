@@ -22,4 +22,5 @@ public interface EmployeeService {
 
     long count();
 
+    List<EmployeeResponseDto> getEmployeesByDepartmentId(Integer departmentId);
 }
