@@ -23,7 +23,7 @@
 
     <modules>
         <module>redis-data</module>
-        <module>cache</module>
+        <module>redis-cache</module>
     </modules>
 
 </project>

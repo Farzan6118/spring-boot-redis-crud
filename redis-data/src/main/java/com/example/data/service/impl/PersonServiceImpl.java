@@ -4,7 +4,7 @@ import com.example.data.Controller.dto.request.PersonRequestDto;
 import com.example.data.Controller.dto.response.PersonResponseDto;
 import com.example.data.domain.Person;
 import com.example.data.mapper.PersonMapper;
-import com.example.data.repository.PersonRepositoryImpl;
+import com.example.data.repository.impl.PersonRepositoryImpl;
 import com.example.data.service.PersonService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.HttpStatus;
