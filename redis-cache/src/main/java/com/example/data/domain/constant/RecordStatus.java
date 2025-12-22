@@ -10,10 +10,8 @@ import java.util.Optional;
 @Getter
 public enum RecordStatus {
 
-    INACTIVE_NOT_DELETED(1, "status.type.inactive.not.deleted"),
-    ACTIVE_NOT_DELETED(2, "status.type.active.not.deleted"),
-    INACTIVE_DELETED(3, "status.type.inactive.deleted"),
-    ACTIVE_HIDE (4, "status.type.active.hide");
+    INACTIVE(0, "status.type.inactive.not.deleted"),
+    ACTIVE(1, "status.type.active.not.deleted");
 
     private final Integer id;
     private final String title;

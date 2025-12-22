@@ -1,7 +1,6 @@
 package com.example.data.domain;
 
 
-import com.example.data.domain.constant.RecordStatus;
 import jakarta.persistence.*;
 import lombok.Getter;
 import lombok.Setter;
@@ -49,8 +48,7 @@ public class BaseEntity<ID extends Serializable> implements Serializable {
     @LastModifiedBy
     private UUID modifiedByUserStaff;
 
-    @Column(nullable = false)
-    private RecordStatus recordStatus = RecordStatus.ACTIVE_NOT_DELETED;
+    private boolean deleted;
 
 }
 
