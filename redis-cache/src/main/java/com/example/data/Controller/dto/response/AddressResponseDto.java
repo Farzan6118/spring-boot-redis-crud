@@ -1,6 +1,5 @@
 package com.example.data.Controller.dto.response;
 
-import com.example.data.Controller.dto.StudentDto;
 import lombok.*;
 
 import java.time.LocalDateTime;
@@ -20,5 +19,4 @@ public class AddressResponseDto {
     private String street;
     private String postalCode;
     private Boolean primaryAddress;
-    private StudentDto student;
 }

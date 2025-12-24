@@ -14,7 +14,8 @@ import org.mapstruct.Mapper;
 )
 public interface StudentMapper {
 
+    StudentResponseDto toResponse(StudentEntity entity);
+
     StudentEntity toEntity(StudentRequestDto dto);
 
-    StudentResponseDto toResponse(StudentEntity entity);
 }

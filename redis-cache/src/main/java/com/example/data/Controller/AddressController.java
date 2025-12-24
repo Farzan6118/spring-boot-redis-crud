@@ -20,36 +20,36 @@ public class AddressController {
     private final AddressService addressService;
 
     @GetMapping("list")
-    public ResponseEntity<List<AddressResponseDto>> getAllAddresses() {
+    public ResponseEntity<List<AddressResponseDto>> getAll() {
         return ResponseEntity.ok(addressService.getAll());
     }
 
     @GetMapping("{id}")
-    public ResponseEntity<AddressResponseDto> getAddressById(
+    public ResponseEntity<AddressResponseDto> getById(
             @PathVariable Long id) {
         return ResponseEntity.ok(addressService.getById(id));
     }
 
     @GetMapping("count")
-    public ResponseEntity<Long> countPeople() {
+    public ResponseEntity<Long> count() {
         return ResponseEntity.ok(addressService.countActive());
     }
 
     @PostMapping
-    public ResponseEntity<AddressResponseDto> createAddress(
+    public ResponseEntity<AddressResponseDto> create(
             @Valid @RequestBody AddressRequestDto requestDto) {
         return ResponseEntity.ok(addressService.create(requestDto));
     }
 
     @PutMapping("{id}")
-    public ResponseEntity<AddressResponseDto> updateAddressById(
+    public ResponseEntity<AddressResponseDto> updateById(
             @Valid @RequestBody AddressRequestDto requestDto,
             @PathVariable Long id) {
         return ResponseEntity.ok(addressService.update(requestDto, id));
     }
 
     @DeleteMapping("{id}")
-    public ResponseEntity<Void> deleteAddressById(
+    public ResponseEntity<Void> deleteById(
             @PathVariable Long id) {
         addressService.deleteById(id);
         return ResponseEntity.noContent().build();

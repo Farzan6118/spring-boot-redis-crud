@@ -2,7 +2,6 @@ package com.example.data.Controller.dto.request;
 
 import lombok.*;
 
-import java.math.BigDecimal;
 import java.time.LocalDateTime;
 
 @Getter
@@ -17,7 +16,7 @@ public class ProfessorRequestDto {
     private String lastName;
     private String nationalCode;
     private String email;
-    private BigDecimal salary;
+    private Double salary;
     private Boolean tenured;
     private LocalDateTime hiringDateTime;
 

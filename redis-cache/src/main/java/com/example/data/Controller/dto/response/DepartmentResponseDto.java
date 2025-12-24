@@ -1,11 +1,8 @@
 package com.example.data.Controller.dto.response;
 
-import com.example.data.Controller.dto.ProfessorDto;
-import com.example.data.Controller.dto.StudentDto;
 import lombok.*;
 
 import java.time.LocalDateTime;
-import java.util.List;
 
 @Getter
 @Setter
@@ -21,6 +18,4 @@ public class DepartmentResponseDto {
     private String code;
     private String name;
     private Boolean active;
-    private List<StudentDto> students;
-    private List<ProfessorDto> professors;
 }

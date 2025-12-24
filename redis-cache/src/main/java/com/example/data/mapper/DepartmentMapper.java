@@ -1,5 +1,6 @@
 package com.example.data.mapper;
 
+import com.example.data.Controller.dto.request.DepartmentRequestDto;
 import com.example.data.Controller.dto.response.DepartmentResponseDto;
 import com.example.data.domain.DepartmentEntity;
 import org.mapstruct.Mapper;
@@ -8,4 +9,6 @@ import org.mapstruct.Mapper;
 public interface DepartmentMapper {
 
     DepartmentResponseDto toResponse(DepartmentEntity entity);
+
+    DepartmentEntity toEntity(DepartmentRequestDto dto);
 }

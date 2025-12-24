@@ -60,7 +60,6 @@ public class AddressServiceImpl implements AddressService {
                 .orElseThrow(() -> new ResponseStatusException(HttpStatus.BAD_REQUEST, "Address not found"));
 
         entity.setDeleted(true);
-        // No need to call save explicitly because of @Transactional
     }
 
     @Override
@@ -69,7 +68,6 @@ public class AddressServiceImpl implements AddressService {
         AddressEntity entity = repository.findByIdAndDeletedIs(id, false)
                 .orElseThrow(() -> new ResponseStatusException(HttpStatus.BAD_REQUEST, "Address not found"));
 
-        // Update fields safely
         Optional.ofNullable(requestDto.getCity()).ifPresent(entity::setCity);
         Optional.ofNullable(requestDto.getStreet()).ifPresent(entity::setStreet);
         Optional.ofNullable(requestDto.getPostalCode()).ifPresent(entity::setPostalCode);
@@ -77,8 +75,10 @@ public class AddressServiceImpl implements AddressService {
         if (requestDto.getPrimaryAddress() != null) {
             if (requestDto.getPrimaryAddress()) {
                 repository.removeAllPrimary();
+                entity.setPrimaryAddress(true);
+            } else {
+                entity.setPrimaryAddress(false);
             }
-            entity.setPrimaryAddress(requestDto.getPrimaryAddress());
         }
 
         return mapper.toResponse(repository.save(entity));
