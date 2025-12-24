@@ -5,13 +5,7 @@ import com.example.data.Controller.dto.response.StudentResponseDto;
 import com.example.data.domain.StudentEntity;
 import org.mapstruct.Mapper;
 
-@Mapper(
-        componentModel = "spring",
-        uses = {
-                AddressMapper.class,
-                DepartmentMapper.class
-        }
-)
+@Mapper(componentModel = "spring")
 public interface StudentMapper {
 
     StudentResponseDto toResponse(StudentEntity entity);

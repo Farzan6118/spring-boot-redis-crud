@@ -33,7 +33,7 @@ public class StudentServiceImpl implements StudentService {
     @Transactional
     @Override
     public StudentResponseDto getById(Long id) {
-        StudentEntity entity = repository.findByIdAndDeletedFalse(id)
+        StudentEntity entity = repository.findByIdAndDeletedIs(id, false)
                 .orElseThrow(() -> new ResponseStatusException(HttpStatus.BAD_REQUEST, "Course not found"));
         return mapper.toResponse(entity);
     }
@@ -41,7 +41,7 @@ public class StudentServiceImpl implements StudentService {
     @Transactional
     @Override
     public List<StudentResponseDto> getAll() {
-        return repository.findAllByDeletedFalse()
+        return repository.findAllByDeletedIs(false)
                 .stream()
                 .map(mapper::toResponse)
                 .toList();
@@ -76,7 +76,7 @@ public class StudentServiceImpl implements StudentService {
     @Transactional
     @Override
     public Long countActive() {
-        return repository.countByDeletedIsFalse();
+        return repository.countByDeletedIs(false);
     }
 
 }

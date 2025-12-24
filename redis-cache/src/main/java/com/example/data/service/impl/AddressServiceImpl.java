@@ -38,7 +38,7 @@ public class AddressServiceImpl implements AddressService {
     @Override
     @Transactional
     public AddressResponseDto getById(Long id) {
-        AddressEntity entity = repository.findByIdAndDeleted(id, false)
+        AddressEntity entity = repository.findByIdAndDeletedIs(id, false)
                 .orElseThrow(() -> new ResponseStatusException(HttpStatus.BAD_REQUEST, "Address not found"));
 
         return mapper.toResponse(entity);
